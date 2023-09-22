@@ -31,7 +31,7 @@ and employs XCTesting with dependency injection for testing purposes.
 - SwiftUI: The app is built using SwiftUI, Apple's declarative UI framework for creating user interfaces.
 
 ## Screenshots
-![DetailViewScores](https://github.com/syedraza011/NYC_HighSchools/assets/37494281/3041a020-0824-4dfa-ad31-0a11091546e3)
+![DetailViewScores](https://github.com/syedraza011/NYC_HighSchools/assets/testcasespassing)
 ![dataNotAvailable](https://github.com/syedraza011/NYC_HighSchools/assets/37494281/aa10fd7f-741d-44e7-8830-10b9d96de39e)
 ![DataLoading](https://github.com/syedraza011/NYC_HighSchools/assets/37494281/b017e43a-3439-436f-9bfa-2dbb947dce5d)
 ![DataLoaded](https://github.com/syedraza011/NYC_HighSchools/assets/37494281/f4b2d7fe-8261-4070-a993-77f707765340)
