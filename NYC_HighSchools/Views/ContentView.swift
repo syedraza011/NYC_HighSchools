@@ -8,22 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var viewModel = SchoolViewModel()
+    @StateObject var viewModel = SchoolViewModel()
+
     var body: some View {
-        ScrollView {
-            LazyVStack {
-                ForEach (viewModel.allSchools, id: \.self) { school in
+        NavigationView {
+            List(viewModel.allSchools, id: \.self) { school in
+                let satsForSchool = viewModel.allSAT.filter { $0.dbn == school.dbn }
+                NavigationLink(destination: SchoolDetails(school: school, sats: satsForSchool)) {
                     Text(school.name)
-                    ForEach (viewModel.allSAT, id: \.self) { sat in
-                        Text(sat.maths)
-                    }
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, minHeight: 60)
+                        .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .leading, endPoint: .trailing))
+                        .cornerRadius(10)
+                        .padding(10)
+                        .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: 2)
                 }
+                .buttonStyle(PlainButtonStyle())
             }
-        }.onAppear {
-            viewModel.getSchools()
-            viewModel.getSAT()
+            .listStyle(PlainListStyle())
+            .navigationTitle("NYC School List")
+            .onAppear {
+                viewModel.getSchools()
+                viewModel.getSAT()
+            }
         }
-        .padding()
+        .background(Color.gray.opacity(0.1).ignoresSafeArea())
     }
 }
 
