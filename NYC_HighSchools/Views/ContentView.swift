@@ -8,37 +8,61 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var viewModel = SchoolViewModel()
-
+    @StateObject var viewModel:SchoolViewModel = SchoolViewModel(service: SchoolService())
+    
     var body: some View {
         NavigationView {
-            List(viewModel.allSchools, id: \.self) { school in
-                let satsForSchool = viewModel.allSAT.filter { $0.dbn == school.dbn }
-                NavigationLink(destination: SchoolDetails(school: school, sats: satsForSchool)) {
-                    Text(school.name)
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity, minHeight: 60)
-                        .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .leading, endPoint: .trailing))
-                        .cornerRadius(10)
-                        .padding(10)
-                        .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: 2)
+            ScrollView {
+                LazyVStack(alignment: .leading) {
+                    switch viewModel.status {
+                    case .initial, .loading:
+                        Text("Loading...")
+                    case .error:
+                        Text("Error.")
+                    case .empty:
+                        Text("Nothing to load.")
+                    case .loaded:
+                        listView(viewModel.data)
+                    }
                 }
-                .buttonStyle(PlainButtonStyle())
+                .padding(.horizontal)
             }
-            .listStyle(PlainListStyle())
-            .navigationTitle("NYC School List")
-            .onAppear {
-                viewModel.getSchools()
-                viewModel.getSAT()
+            .navigationTitle("NYC Schools List")
+        }
+        .onAppear {
+            viewModel.getSchools()
+        }
+    }
+    
+        private func listView(_ data:[SchoolData]) -> some View {
+            ForEach(data, id: \.self) { school in
+
+                NavigationLink(destination: SATCell(dbn: school.dbn)) {
+                    HStack {
+                        Text(school.school_name)
+                            .font(.subheadline)
+                            .foregroundColor(.white)
+                            .multilineTextAlignment(.leading)
+                        Spacer()
+                    }
+                    .padding(10)
+                    .background(Color.blue)
+                    .cornerRadius(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color.black, lineWidth: 1)
+                    )
+                    .shadow(radius: 10)
+                }
+
             }
         }
-        .background(Color.gray.opacity(0.1).ignoresSafeArea())
-    }
-}
 
+ 
+}
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
+

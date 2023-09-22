@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E9964E822ABDF39F0083E21D /* sat_success_file.json in Resources */ = {isa = PBXBuildFile; fileRef = E9964E7D2ABDF39F0083E21D /* sat_success_file.json */; };
+		E9964E832ABDF39F0083E21D /* sat_failure_file.json in Resources */ = {isa = PBXBuildFile; fileRef = E9964E7E2ABDF39F0083E21D /* sat_failure_file.json */; };
+		E9964E842ABDF39F0083E21D /* school_empty_file.json in Resources */ = {isa = PBXBuildFile; fileRef = E9964E7F2ABDF39F0083E21D /* school_empty_file.json */; };
+		E9964E852ABDF39F0083E21D /* school_failure_file.json in Resources */ = {isa = PBXBuildFile; fileRef = E9964E802ABDF39F0083E21D /* school_failure_file.json */; };
+		E9964E862ABDF39F0083E21D /* school_success_file.json in Resources */ = {isa = PBXBuildFile; fileRef = E9964E812ABDF39F0083E21D /* school_success_file.json */; };
 		E9A1A5292ABD86110090D849 /* NYC_HighSchoolsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A1A5282ABD86110090D849 /* NYC_HighSchoolsApp.swift */; };
 		E9A1A52B2ABD86110090D849 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A1A52A2ABD86110090D849 /* ContentView.swift */; };
 		E9A1A52D2ABD86120090D849 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9A1A52C2ABD86120090D849 /* Assets.xcassets */; };
@@ -15,12 +20,11 @@
 		E9A1A5442ABD86130090D849 /* NYC_HighSchoolsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A1A5432ABD86130090D849 /* NYC_HighSchoolsUITests.swift */; };
 		E9A1A5462ABD86130090D849 /* NYC_HighSchoolsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A1A5452ABD86130090D849 /* NYC_HighSchoolsUITestsLaunchTests.swift */; };
 		E9A1A55B2ABD86A30090D849 /* SchoolService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A1A5532ABD86A30090D849 /* SchoolService.swift */; };
-		E9A1A55C2ABD86A30090D849 /* SchoolResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A1A5552ABD86A30090D849 /* SchoolResponse.swift */; };
-		E9A1A55D2ABD86A30090D849 /* AsyncState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A1A5572ABD86A30090D849 /* AsyncState.swift */; };
+		E9A1A55C2ABD86A30090D849 /* SchoolData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A1A5552ABD86A30090D849 /* SchoolData.swift */; };
 		E9A1A55E2ABD86A30090D849 /* SchoolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A1A5592ABD86A30090D849 /* SchoolViewModel.swift */; };
 		E9A1A5612ABD87520090D849 /* NYCHighSchoolExpectedScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = E9A1A5602ABD87520090D849 /* NYCHighSchoolExpectedScreen.png */; };
-		E9A1A5632ABD93370090D849 /* SchoolDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A1A5622ABD93370090D849 /* SchoolDetails.swift */; };
-		E9A1A5652ABD935D0090D849 /* SATDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A1A5642ABD935D0090D849 /* SATDetails.swift */; };
+		E9A1A5652ABD935D0090D849 /* SATCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A1A5642ABD935D0090D849 /* SATCell.swift */; };
+		E9A1A5672ABD98E00090D849 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A1A5662ABD98E00090D849 /* FooterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +45,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E9964E7D2ABDF39F0083E21D /* sat_success_file.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sat_success_file.json; sourceTree = "<group>"; };
+		E9964E7E2ABDF39F0083E21D /* sat_failure_file.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sat_failure_file.json; sourceTree = "<group>"; };
+		E9964E7F2ABDF39F0083E21D /* school_empty_file.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = school_empty_file.json; sourceTree = "<group>"; };
+		E9964E802ABDF39F0083E21D /* school_failure_file.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = school_failure_file.json; sourceTree = "<group>"; };
+		E9964E812ABDF39F0083E21D /* school_success_file.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = school_success_file.json; sourceTree = "<group>"; };
 		E9A1A5252ABD86110090D849 /* NYC_HighSchools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYC_HighSchools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9A1A5282ABD86110090D849 /* NYC_HighSchoolsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYC_HighSchoolsApp.swift; sourceTree = "<group>"; };
 		E9A1A52A2ABD86110090D849 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,12 +61,11 @@
 		E9A1A5432ABD86130090D849 /* NYC_HighSchoolsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYC_HighSchoolsUITests.swift; sourceTree = "<group>"; };
 		E9A1A5452ABD86130090D849 /* NYC_HighSchoolsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYC_HighSchoolsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E9A1A5532ABD86A30090D849 /* SchoolService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolService.swift; sourceTree = "<group>"; };
-		E9A1A5552ABD86A30090D849 /* SchoolResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolResponse.swift; sourceTree = "<group>"; };
-		E9A1A5572ABD86A30090D849 /* AsyncState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncState.swift; sourceTree = "<group>"; };
+		E9A1A5552ABD86A30090D849 /* SchoolData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolData.swift; sourceTree = "<group>"; };
 		E9A1A5592ABD86A30090D849 /* SchoolViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolViewModel.swift; sourceTree = "<group>"; };
 		E9A1A5602ABD87520090D849 /* NYCHighSchoolExpectedScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NYCHighSchoolExpectedScreen.png; sourceTree = "<group>"; };
-		E9A1A5622ABD93370090D849 /* SchoolDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolDetails.swift; sourceTree = "<group>"; };
-		E9A1A5642ABD935D0090D849 /* SATDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATDetails.swift; sourceTree = "<group>"; };
+		E9A1A5642ABD935D0090D849 /* SATCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATCell.swift; sourceTree = "<group>"; };
+		E9A1A5662ABD98E00090D849 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +93,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E9964E762ABDE8D10083E21D /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				E9964E7E2ABDF39F0083E21D /* sat_failure_file.json */,
+				E9964E7D2ABDF39F0083E21D /* sat_success_file.json */,
+				E9964E7F2ABDF39F0083E21D /* school_empty_file.json */,
+				E9964E802ABDF39F0083E21D /* school_failure_file.json */,
+				E9964E812ABDF39F0083E21D /* school_success_file.json */,
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
 		E9A1A51C2ABD86110090D849 = {
 			isa = PBXGroup;
 			children = (
@@ -112,7 +132,6 @@
 				E9A1A5582ABD86A30090D849 /* Views */,
 				E9A1A5542ABD86A30090D849 /* Model */,
 				E9A1A5522ABD86A30090D849 /* Network */,
-				E9A1A5562ABD86A30090D849 /* Shared */,
 				E9A1A5282ABD86110090D849 /* NYC_HighSchoolsApp.swift */,
 				E9A1A52C2ABD86120090D849 /* Assets.xcassets */,
 				E9A1A52E2ABD86120090D849 /* Preview Content */,
@@ -131,6 +150,7 @@
 		E9A1A5382ABD86130090D849 /* NYC_HighSchoolsTests */ = {
 			isa = PBXGroup;
 			children = (
+				E9964E762ABDE8D10083E21D /* MockData */,
 				E9A1A5392ABD86130090D849 /* NYC_HighSchoolsTests.swift */,
 			);
 			path = NYC_HighSchoolsTests;
@@ -157,25 +177,17 @@
 			isa = PBXGroup;
 			children = (
 				E9A1A5592ABD86A30090D849 /* SchoolViewModel.swift */,
-				E9A1A5552ABD86A30090D849 /* SchoolResponse.swift */,
+				E9A1A5552ABD86A30090D849 /* SchoolData.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		E9A1A5562ABD86A30090D849 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				E9A1A5572ABD86A30090D849 /* AsyncState.swift */,
-			);
-			path = Shared;
 			sourceTree = "<group>";
 		};
 		E9A1A5582ABD86A30090D849 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				E9A1A52A2ABD86110090D849 /* ContentView.swift */,
-				E9A1A5622ABD93370090D849 /* SchoolDetails.swift */,
-				E9A1A5642ABD935D0090D849 /* SATDetails.swift */,
+				E9A1A5642ABD935D0090D849 /* SATCell.swift */,
+				E9A1A5662ABD98E00090D849 /* FooterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -294,6 +306,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9964E862ABDF39F0083E21D /* school_success_file.json in Resources */,
+				E9964E842ABDF39F0083E21D /* school_empty_file.json in Resources */,
+				E9964E822ABDF39F0083E21D /* sat_success_file.json in Resources */,
+				E9964E852ABDF39F0083E21D /* school_failure_file.json in Resources */,
+				E9964E832ABDF39F0083E21D /* sat_failure_file.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,12 +329,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9A1A55E2ABD86A30090D849 /* SchoolViewModel.swift in Sources */,
-				E9A1A5652ABD935D0090D849 /* SATDetails.swift in Sources */,
-				E9A1A55D2ABD86A30090D849 /* AsyncState.swift in Sources */,
+				E9A1A5652ABD935D0090D849 /* SATCell.swift in Sources */,
+				E9A1A5672ABD98E00090D849 /* FooterView.swift in Sources */,
 				E9A1A52B2ABD86110090D849 /* ContentView.swift in Sources */,
 				E9A1A5292ABD86110090D849 /* NYC_HighSchoolsApp.swift in Sources */,
-				E9A1A5632ABD93370090D849 /* SchoolDetails.swift in Sources */,
-				E9A1A55C2ABD86A30090D849 /* SchoolResponse.swift in Sources */,
+				E9A1A55C2ABD86A30090D849 /* SchoolData.swift in Sources */,
 				E9A1A55B2ABD86A30090D849 /* SchoolService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

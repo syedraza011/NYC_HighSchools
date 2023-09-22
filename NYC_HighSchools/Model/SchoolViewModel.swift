@@ -9,54 +9,78 @@
 import Foundation
 import Combine
 
+enum Status {
+    case initial, loading, loaded, error, empty
+}
+
 class SchoolViewModel: ObservableObject {
-    let service = SchoolService()
-    @Published var allSchools = [SchoolResponse]()
-    @Published var allSAT = [SATResponse]()
-    @Published var state: AsyncState = .initial
-
-    var cancellables: Set<AnyCancellable> = []
-
+    private var cancellable = Set<AnyCancellable>()
+    private let service:SchoolServiceProtocol
+    
+    init(service: SchoolServiceProtocol) {
+        self.service = service
+    }
+    
+    @Published var data: [SchoolData] = [SchoolData]()
+    @Published var status: Status = .initial
+    
     func getSchools() {
-        state = .loading
-        self.service.fetchSchools()
-            .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { completion in
+        status = .loading
+        service.fetchSchools()
+            .sink { [weak self] completion in
                 switch completion {
                 case .finished:
                     break
                 case .failure(let err):
-                    print("Fetch Failed: \(err.localizedDescription)")
-                   
+                    self?.status = .error
+                    print(String(describing: err))
                 }
-            }, receiveValue: { [weak self] response in
-               
-                self?.allSchools = response
-            })
-            .store(in: &cancellables)
+            } receiveValue: { [weak self] response in
+                self?.data = response
+            
+                if response.count > 0 {
+                    self?.status = .loaded
+                } else {
+                    self?.status = .empty
+                }
+            }
+            .store(in: &cancellable)
+    }
+}
+
+
+class SATViewModel: ObservableObject {
+    private var cancellable = Set<AnyCancellable>()
+    private let service:SchoolServiceProtocol
+    
+    init(service: SchoolServiceProtocol) {
+        self.service = service
     }
     
+    @Published var data: [SATData] = [SATData]()
+    @Published var status: Status = .initial
     
-    
-    func getSAT() {
-        state = .loading
-        self.service.fetchSAT()
-            .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { completion in
+    func getSAT(_ dbn: String) {
+        status = .loading
+        service.fetchSAT(dbn)
+            .sink { [weak self] completion in
                 switch completion {
                 case .finished:
                     break
                 case .failure(let err):
-                    print("Fetch Failed: \(err.localizedDescription)")
-                   
+                    self?.status = .error
+                    print(String(describing: err))
                 }
-            }, receiveValue: { [weak self] response in
-               
-                self?.allSAT = response
-            })
-            .store(in: &cancellables)
+            } receiveValue: { [weak self] response in
+                self?.data = response
+                
+                if response.count > 0 {
+                    self?.status = .loaded
+                } else {
+                    self?.status = .empty
+                }
+            }
+            .store(in: &cancellable)
     }
-    
-    
 }
 
