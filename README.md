@@ -1,5 +1,5 @@
 # NYC_HighSchools
-Certainly! Here's a basic README for your SwiftUI code:
+Certainly! Here's a basic README for my app:
 
 ---
 
