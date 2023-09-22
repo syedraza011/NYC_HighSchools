@@ -37,7 +37,7 @@ struct SATCell: View {
                             .foregroundColor(Color.orange)
                             .padding(.bottom, 4)
                     }
-                    .frame(width: 200, height: 200) // Set a fixed size of 200x200
+                    .frame(width: 200, height: 200) 
                     .padding(16)
                     .background(Color.white)
                     .cornerRadius(10)
@@ -49,14 +49,6 @@ struct SATCell: View {
                     .cornerRadius(10)
                 }
 
-
-
-//                ForEach(viewModel.data, id: \.self) { score in
-//                    Text("Reading: " + score.sat_critical_reading_avg_score)
-//                    Text("Math: " + score.sat_math_avg_score)
-//                    Text("Writing: " + score.sat_writing_avg_score)
-//
-//                }
             }
         }
         .onAppear {
