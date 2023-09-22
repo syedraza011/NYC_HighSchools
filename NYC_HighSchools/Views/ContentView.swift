@@ -8,12 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var viewModel = SchoolViewModel()
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ScrollView {
+            LazyVStack {
+                ForEach (viewModel.allSchools, id: \.self) { school in
+                    Text(school.name)
+                    ForEach (viewModel.allSAT, id: \.self) { sat in
+                        Text(sat.maths)
+                    }
+                }
+            }
+        }.onAppear {
+            viewModel.getSchools()
+            viewModel.getSAT()
         }
         .padding()
     }

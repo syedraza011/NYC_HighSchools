@@ -18,6 +18,7 @@
 		E9A1A55C2ABD86A30090D849 /* SchoolResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A1A5552ABD86A30090D849 /* SchoolResponse.swift */; };
 		E9A1A55D2ABD86A30090D849 /* AsyncState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A1A5572ABD86A30090D849 /* AsyncState.swift */; };
 		E9A1A55E2ABD86A30090D849 /* SchoolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A1A5592ABD86A30090D849 /* SchoolViewModel.swift */; };
+		E9A1A5612ABD87520090D849 /* NYCHighSchoolExpectedScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = E9A1A5602ABD87520090D849 /* NYCHighSchoolExpectedScreen.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		E9A1A5552ABD86A30090D849 /* SchoolResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolResponse.swift; sourceTree = "<group>"; };
 		E9A1A5572ABD86A30090D849 /* AsyncState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncState.swift; sourceTree = "<group>"; };
 		E9A1A5592ABD86A30090D849 /* SchoolViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolViewModel.swift; sourceTree = "<group>"; };
+		E9A1A5602ABD87520090D849 /* NYCHighSchoolExpectedScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NYCHighSchoolExpectedScreen.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		E9A1A5272ABD86110090D849 /* NYC_HighSchools */ = {
 			isa = PBXGroup;
 			children = (
+				E9A1A5602ABD87520090D849 /* NYCHighSchoolExpectedScreen.png */,
 				E9A1A5542ABD86A30090D849 /* Model */,
 				E9A1A5522ABD86A30090D849 /* Network */,
 				E9A1A5562ABD86A30090D849 /* Shared */,
@@ -275,6 +278,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9A1A5612ABD87520090D849 /* NYCHighSchoolExpectedScreen.png in Resources */,
 				E9A1A5302ABD86120090D849 /* Preview Assets.xcassets in Resources */,
 				E9A1A52D2ABD86120090D849 /* Assets.xcassets in Resources */,
 			);
