@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SATCell: View {
     @StateObject var viewModel = SATViewModel(service: SchoolService())
-
     let dbn: String
 
     var body: some View {
