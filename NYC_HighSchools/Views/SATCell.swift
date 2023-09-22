@@ -9,9 +9,9 @@ import SwiftUI
 
 struct SATCell: View {
     @StateObject var viewModel = SATViewModel(service: SchoolService())
-    
+
     let dbn: String
-    
+
     var body: some View {
         VStack {
             switch viewModel.status {
@@ -23,7 +23,7 @@ struct SATCell: View {
                 Text("No data available")
             case .loaded:
                 ForEach(viewModel.data, id: \.self) { score in
-                    Text("Reading: " + score.sat_math_avg_score)
+                    Text("Reading: " + score.sat_critical_reading_avg_score)
                     Text("Math: " + score.sat_math_avg_score)
                     Text("Writing: " + score.sat_writing_avg_score)
                 }
@@ -34,6 +34,7 @@ struct SATCell: View {
         }
     }
 }
+
 
 struct SATCell_Previews: PreviewProvider {
     static var previews: some View {

@@ -31,7 +31,7 @@ final class NYCSchoolsTests: XCTestCase {
         
         viewModel.getSchools()
         
-        viewModel.$data
+        let cancellable =  viewModel.$data
             .sink { schools in
                 let firstschool = schools.first!
                 XCTAssertEqual(firstschool.dbn, "02M260")
@@ -40,21 +40,22 @@ final class NYCSchoolsTests: XCTestCase {
         
         wait(for:[exp], timeout: 5.0)
     }
-
+    
     func test_school_fetch_failure() {
         let exp = XCTestExpectation(description: "fetch failure data")
         let viewModel = SchoolViewModel(service: MockSchoolService(file: .school_failure_file))
         
         viewModel.getSchools()
         
-        viewModel.$status
+        let cancellable = viewModel.$status
             .sink { state in
                 XCTAssertEqual(state, .error)
                 exp.fulfill()
             }
         
-        wait(for:[exp], timeout: 5.0)
+        wait(for: [exp], timeout: 5.0)
     }
+
     
     func test_school_fetch_empty() {
         let exp = XCTestExpectation(description: "fetch empty data")
@@ -62,7 +63,7 @@ final class NYCSchoolsTests: XCTestCase {
         
         viewModel.getSchools()
         
-        viewModel.$status
+        let cancellable = viewModel.$status
             .sink { state in
                 XCTAssertEqual(state, .empty)
                 exp.fulfill()
@@ -77,7 +78,7 @@ final class NYCSchoolsTests: XCTestCase {
         
         viewModel.getSAT("dbn")
         
-        viewModel.$data
+        let cancellable = viewModel.$data
             .sink { scores in
                 let score = scores.first!
                 XCTAssertEqual(score.sat_critical_reading_avg_score, "411")
@@ -93,7 +94,7 @@ final class NYCSchoolsTests: XCTestCase {
         
         viewModel.getSAT("dbn")
         
-        viewModel.$status
+        let cancellable = viewModel.$status
             .sink { state in
                 XCTAssertEqual(state, .error)
                 exp.fulfill()
@@ -108,7 +109,7 @@ final class NYCSchoolsTests: XCTestCase {
         
         viewModel.getSAT("dbn")
         
-        viewModel.$status
+        let cancellable =  viewModel.$status
             .sink { state in
                 XCTAssertEqual(state, .empty)
                 exp.fulfill()

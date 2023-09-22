@@ -176,8 +176,8 @@
 		E9A1A5542ABD86A30090D849 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E9A1A5592ABD86A30090D849 /* SchoolViewModel.swift */,
 				E9A1A5552ABD86A30090D849 /* SchoolData.swift */,
+				E9A1A5592ABD86A30090D849 /* SchoolViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
