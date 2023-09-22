@@ -9,6 +9,7 @@
 import Foundation
 import Combine
 
+// making use of states/ status to keep user update when data is being loaded/ updated 
 enum Status {
     case initial, loading, loaded, error, empty
 }
@@ -20,10 +21,12 @@ class SchoolViewModel: ObservableObject {
     init(service: SchoolServiceProtocol) {
         self.service = service
     }
-    
+    //property wrappers
     @Published var data: [SchoolData] = [SchoolData]()
     @Published var status: Status = .initial
+    @Published var filteredSchools: [SchoolData] = []
     
+    // getting all the school data
     func getSchools() {
         status = .loading
         service.fetchSchools()
@@ -48,7 +51,7 @@ class SchoolViewModel: ObservableObject {
     }
 }
 
-
+// getting all the SAT scores
 class SATViewModel: ObservableObject {
     private var cancellable = Set<AnyCancellable>()
     private let service:SchoolServiceProtocol

@@ -9,6 +9,7 @@
 import Foundation
 import Combine
 
+// using protocls for UnitTesting purposes
 protocol SchoolServiceProtocol {
     func fetchSchools() -> Future<[SchoolData], Error>
     
@@ -21,6 +22,7 @@ class SchoolService: SchoolServiceProtocol {
     private let urlStringSchool = "https://data.cityofnewyork.us/resource/s3k6-pzi2.json"
     private let urlStringSAT = "https://data.cityofnewyork.us/resource/f9bf-2cp4.json?dbn="
     
+    // fetching data from API and passing it to ViewModel
     func fetchSchools() -> Future<[SchoolData], Error> {
         return Future { [weak self] promise in
             guard let self = self else { return }
@@ -42,8 +44,9 @@ class SchoolService: SchoolServiceProtocol {
                 }
                 .store(in: &cancellable)
         }
-    }
+    }// ending fetching Data for schools
     
+    // fetching score data
     func fetchSAT(_ dbn: String) -> Future<[SATData], Error> {
         return Future { [weak self] promise in
             guard let self = self else { return }

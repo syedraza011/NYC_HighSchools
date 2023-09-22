@@ -10,7 +10,6 @@ import SwiftUI
 struct SATCell: View {
     @StateObject var viewModel = SATViewModel(service: SchoolService())
     let dbn: String
-
     var body: some View {
         VStack {
             switch viewModel.status {
@@ -22,10 +21,42 @@ struct SATCell: View {
                 Text("No data available")
             case .loaded:
                 ForEach(viewModel.data, id: \.self) { score in
-                    Text("Reading: " + score.sat_critical_reading_avg_score)
-                    Text("Math: " + score.sat_math_avg_score)
-                    Text("Writing: " + score.sat_writing_avg_score)
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Reading: " + score.sat_critical_reading_avg_score)
+                            .font(.title2)
+                            .foregroundColor(Color.blue)
+                            .padding(.bottom, 4)
+
+                        Text("Math: " + score.sat_math_avg_score)
+                            .font(.title2)
+                            .foregroundColor(Color.green)
+                            .padding(.bottom, 4)
+
+                        Text("Writing: " + score.sat_writing_avg_score)
+                            .font(.title2)
+                            .foregroundColor(Color.orange)
+                            .padding(.bottom, 4)
+                    }
+                    .frame(width: 200, height: 200) // Set a fixed size of 200x200
+                    .padding(16)
+                    .background(Color.white)
+                    .cornerRadius(10)
+                    .shadow(color: Color(.sRGB, red: 0, green: 0, blue: 0, opacity: 0.2), radius: 5, x: 0, y: 4)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
+                    .frame(maxWidth: .infinity)
+                    .background(Color.gray.opacity(0.1))
+                    .cornerRadius(10)
                 }
+
+
+
+//                ForEach(viewModel.data, id: \.self) { score in
+//                    Text("Reading: " + score.sat_critical_reading_avg_score)
+//                    Text("Math: " + score.sat_math_avg_score)
+//                    Text("Writing: " + score.sat_writing_avg_score)
+//
+//                }
             }
         }
         .onAppear {
